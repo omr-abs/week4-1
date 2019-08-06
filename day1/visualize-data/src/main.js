@@ -44,6 +44,7 @@ const filterData = evnt => {
     .map(item => [item.id, item.value])
     .filter(item => item[1])[0];
 
+  // Click with no value entered
   if (!selector) {
     alert("Enter at least a criterion");
     const cardList = document.querySelectorAll(".card");
@@ -54,7 +55,9 @@ const filterData = evnt => {
       loopCreate(list);
     }
     return;
-  } // Click with no value entered
+  }
+
+  // Filtering
   const [key, val] = selector;
   let filteredList = [];
 
@@ -69,6 +72,8 @@ const filterData = evnt => {
   for (card of cardList) {
     result.removeChild(card);
   }
+
+  // Draw new set of cards from filtered list
   loopCreate(filteredList);
   document.querySelector(`#${key}`).value = null;
 };
