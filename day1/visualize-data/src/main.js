@@ -40,7 +40,7 @@ const filterData = evnt => {
   evnt.preventDefault();
   const collection = document.querySelectorAll("input");
   const selector = Array.from(collection)
-    .map(item => [item.id, item.value])
+    .map(item => [item.id, item.value]) //["gender", "male"]
     .filter(item => item[1])[0];
 
   if (!selector) {
