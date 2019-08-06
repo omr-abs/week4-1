@@ -276,4 +276,12 @@ const data = {
   }
 };
 
-const list = data.results;
+// const list = data.results;
+
+const url = "https://randomuser.me/api/?results=10";
+
+fetch(url)
+  .then(response => response.json())
+  .then(json => {
+    createArray(json);
+  });

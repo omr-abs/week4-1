@@ -1,5 +1,6 @@
 const main = document.querySelector(".main-elmnt");
 const result = document.querySelector(".result-zone");
+let list;
 
 const initial = str => {
   return str[0].toUpperCase() + str.substring(1);
@@ -45,6 +46,13 @@ const filterData = evnt => {
 
   if (!selector) {
     alert("Enter at least a criterion");
+    const cardList = document.querySelectorAll(".card");
+    if (cardList.length < list.length) {
+      for (card of cardList) {
+        result.removeChild(card);
+      }
+      loopCreate(list);
+    }
     return;
   } // Click with no value entered
   const key = selector[0];
@@ -74,4 +82,9 @@ const loopCreate = arr => {
   }
 };
 
-loopCreate(list);
+// loopCreate(list);
+
+const createArray = obj => {
+  list = obj.results;
+  loopCreate(list);
+};
