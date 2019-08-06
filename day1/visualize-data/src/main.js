@@ -55,8 +55,7 @@ const filterData = evnt => {
     }
     return;
   } // Click with no value entered
-  const key = selector[0];
-  const val = selector[1];
+  const [key, val] = selector;
   let filteredList = [];
 
   if (key === "gender") {
