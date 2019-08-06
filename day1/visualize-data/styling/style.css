@@ -13,6 +13,9 @@ header {
 
 .main-elmnt {
   padding: 2%;
+}
+
+.result-zone {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -40,4 +43,10 @@ header {
 
 .subfield {
   font-size: 1.1rem;
+}
+
+.filter-zone {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1% 0% 1% 0%;
 }
